@@ -25,21 +25,8 @@ public final class ComplexNumber {
         return complex(a.re-b.re, a.im-b.im);
     }
 
-    /*public ComplexNumber mul(ComplexNumber b) {
-        ComplexNumber a = this;
-        return complex(a.re);
-    }*/
-
-    public float absolutValue(){
+    public float absoluteValue(){
         return (float)Math.sqrt(this.re * this.re + this.im * this.im);
-    }
-
-
-    public static ComplexNumber addComplexNumber(ComplexNumber complexA, ComplexNumber complexB){
-        float newValueX = complexA.re + complexB.re;
-        float newValueY = complexA.im + complexB.im;
-        ComplexNumber complexSum = new ComplexNumber(newValueX, newValueY);
-        return complexSum;
     }
 
     public static ComplexNumber squareComplexNumber(ComplexNumber complexNumber) {

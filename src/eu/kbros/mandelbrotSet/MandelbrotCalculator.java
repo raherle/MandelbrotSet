@@ -7,7 +7,7 @@ public class MandelbrotCalculator {
 
     public static ComplexNumber mandelbrotFunction(ComplexNumber complexNumberZ, ComplexNumber complexNumberC) {
         ComplexNumber result = ComplexNumber.squareComplexNumber(complexNumberZ);
-        result = ComplexNumber.addComplexNumber(result, complexNumberC);
+        result = result.plus(complexNumberC);
 
         return result;
     }
@@ -39,7 +39,7 @@ public class MandelbrotCalculator {
 
     public static float distanceComplexNumber(ComplexNumber complexNumberA, ComplexNumber complexNumberB){
         ComplexNumber complexNumberDistance = complexNumberA.minus(complexNumberB);
-        return complexNumberDistance.absolutValue();
+        return complexNumberDistance.absoluteValue();
     }
 
     public static HashMap<Pixel,ComplexNumber> mapPixelsToCValues(Range range, Canvas canvas){
@@ -68,9 +68,9 @@ public class MandelbrotCalculator {
             boolean isColored = isInRangeAfterIteration(cNumber);
 
             if(isColored){
-                pixel.setColor("1");
+                pixel.setColor("#");
             } else{
-                pixel.setColor("0");
+                pixel.setColor(" ");
             }
         }
     }

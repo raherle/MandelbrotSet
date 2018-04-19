@@ -1,16 +1,16 @@
 package eu.kbros.mandelbrotSet;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 
 public class MandelbrotCalculatorTest {
 
     @Test
-    public void addComplexNumber() {
+    public void plus() {
         ComplexNumber complexNumberA = new ComplexNumber(3, 4);
         ComplexNumber complexNumberB = new ComplexNumber(1, 2);
-        ComplexNumber complexNumberSum = ComplexNumber.addComplexNumber(complexNumberA, complexNumberB);
+        ComplexNumber complexNumberSum = complexNumberA.plus(complexNumberB);
         assertEquals(4, complexNumberSum.re, 0.001);
         assertEquals(6, complexNumberSum.im, 0.001);
     }
@@ -61,7 +61,5 @@ public class MandelbrotCalculatorTest {
     public void mapPixelsToCValues(){
         Range range = new Range(-0.6f,-0.4f,0.5f,0.65f);
         Canvas canvas = new Canvas(120,40);
-
-
     }
 }

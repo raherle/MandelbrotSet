@@ -2,7 +2,6 @@ package eu.kbros.mandelbrotSet;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import static eu.kbros.mandelbrotSet.MandelbrotCalculator.assignColorToPixels;
 import static eu.kbros.mandelbrotSet.MandelbrotCalculator.mapPixelsToCValues;
 
@@ -12,24 +11,22 @@ public class OutputGenerator {
         Range range = new Range(-2f,1f,-1f,1f);
         Canvas canvas = new Canvas(120,40);
 
-
         HashMap<Pixel,ComplexNumber> pixelMap = mapPixelsToCValues(range,canvas);
         assignColorToPixels(pixelMap);
-        String[][] outputArray = traverse(convertPixelMapIntoArray(pixelMap, canvas));
+        String[][] outputArray = rotated(convertPixelMapIntoArray(pixelMap, canvas));
         String outputString = generateOutputString(outputArray);
         System.out.println(outputString);
-
     }
 
-    public static String[][] traverse(String[][] array) {
-        String[][] traversedArray = new String[array[0].length][array.length];
+    public static String[][] rotated(String[][] array) {
+        String[][] result = new String[array[0].length][array.length];
 
         for(int i = 0; i<array.length; i++){
             for(int j = 0; j<array[i].length; j++){
-                traversedArray[array[0].length-j-1][i] = array[i][j];
+                result[array[0].length-j-1][i] = array[i][j];
             }
         }
-        return traversedArray;
+        return result;
     }
 
     public static String generateOutputString(String[][] array) {

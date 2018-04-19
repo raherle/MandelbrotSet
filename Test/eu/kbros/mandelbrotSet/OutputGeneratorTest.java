@@ -9,6 +9,7 @@ public class OutputGeneratorTest {
 
 
     @Test
+    @DisplayName("generate Array 4x12")
     public void generateOutputString(){
         String[][] array = new String[4][12];
         array[0] = new String[]{"0", "0", "1", "1", "0", "1", "0", "0", "1", "1", "1", "0"};
@@ -32,7 +33,7 @@ public class OutputGeneratorTest {
                 {"2", "4"},
                 {"1", "3"}};
 
-        assertArrayEquals(expected, OutputGenerator.traverse(array));
+        assertArrayEquals(expected, OutputGenerator.rotated(array));
     }
 
     @Test
@@ -47,7 +48,7 @@ public class OutputGeneratorTest {
                 {"2", "5"},
                 {"1", "4"}};
 
-        assertArrayEquals(expected, OutputGenerator.traverse(array));
+        assertArrayEquals(expected, OutputGenerator.rotated(array));
     }
 
     @Test
@@ -63,7 +64,7 @@ public class OutputGeneratorTest {
                 {"2", "5", "8"},
                 {"1", "4", "7"}};
 
-        assertArrayEquals(expected, OutputGenerator.traverse(array));
+        assertArrayEquals(expected, OutputGenerator.rotated(array));
     }
 
 }
